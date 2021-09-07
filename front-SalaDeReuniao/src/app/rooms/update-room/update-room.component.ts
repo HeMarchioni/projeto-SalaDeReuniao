@@ -29,16 +29,13 @@ export class UpdateRoomComponent implements OnInit {
         }, error => console.log(error));
   }
 
-  updateRoom() {
+  onSubmit()  {
     this.roomService.updateRoom(this.id, this.room)
         .subscribe(data => console.log(data), error => console.log(error));
     this.room = new Room();
     this.gotoList();
   }
 
-  onSubmit() {
-    this.updateRoom();
-  }
 
   gotoList() {
     this.router.navigate(['/rooms']);
